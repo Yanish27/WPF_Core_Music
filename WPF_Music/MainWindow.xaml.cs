@@ -12,17 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_Music.DAO;
+using WPF_Music.Music;
+using WPF_Music.View;
 
 namespace WPF_Music
 {
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        DAO_Artist daoart;
         public MainWindow()
         {
             InitializeComponent();
+            daoart = new DAO_Artist();
            
         }
 
@@ -46,6 +53,16 @@ namespace WPF_Music
         private void BTN_page_Info_Click(object sender, RoutedEventArgs e)
         {
             PartieCentrale.Content = new View.UI_Info();
+        }
+
+        private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult mbr;
+            mbr = MessageBox.Show("Êtes vous sur de vouloir quitter ?", "WPF Music", MessageBoxButton.YesNo);
+            if (mbr == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

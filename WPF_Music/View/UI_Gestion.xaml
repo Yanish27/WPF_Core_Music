@@ -7,7 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="blue">
-
-        <Label Content="gestion gestion getion" HorizontalAlignment="Left" Margin="388,148,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="DG_Artist"></DataGrid>
     </Grid>
 </UserControl>
