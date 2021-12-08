@@ -51,6 +51,14 @@
               "target": "Package",
               "version": "[6.4.4, )"
             },
+            "HamburgerMenu": {
+              "target": "Package",
+              "version": "[0.1.0, )"
+            },
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

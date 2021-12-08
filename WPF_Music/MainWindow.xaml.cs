@@ -24,17 +24,19 @@ namespace WPF_Music
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        
         DAO_Artist daoart;
         public MainWindow()
         {
             InitializeComponent();
+            // Création d'un objet appelée daoart depuis le constructeur DAO_Artist();
             daoart = new DAO_Artist();
            
         }
 
         private void BTN_Home_Click(object sender, RoutedEventArgs e)
         {
+            // Si clic sur BTN_Home, remplacement de partiecentrale par la vue UI_Home() dans le dossier VUE : Modèle MVC
             PartieCentrale.Content = new View.UI_Home();
         }
 

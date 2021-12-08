@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "SOZECh++sH/TcViHNIUVuIJnu8n7aMG/MA8ZgaxF03cWWSCtXs1kOuM40URx/Vtr5u4MHZkY+MKEKNjO1Xs6zw==",
+  "dgSpecHash": "X7qU+DEGrmkalTtqDyfz+3xt5P2eXMxpBsWXi+M7RdrFX8WWWvQaOKgQqjEicV0AZxXShcpYFwkWg7GwR9pZHg==",
   "success": true,
   "projectFilePath": "C:\\Users\\SIO2\\source\\repos\\WPF_Music_solution\\WPF_Music\\WPF_Music.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SIO2\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\SIO2\\.nuget\\packages\\hamburgermenu\\0.1.0\\hamburgermenu.0.1.0.nupkg.sha512",
     "C:\\Users\\SIO2\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\SIO2\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
+    "C:\\Users\\SIO2\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512",
     "C:\\Users\\SIO2\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\SIO2\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.10\\microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
     "C:\\Users\\SIO2\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
@@ -118,5 +121,16 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'HamburgerMenu 0.1.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' au lieu du framework cible du projet '.NETCoreApp,Version=v3.1'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "libraryId": "HamburgerMenu",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }
