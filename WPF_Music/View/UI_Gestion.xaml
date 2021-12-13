@@ -6,7 +6,54 @@
              xmlns:local="clr-namespace:WPF_Music.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="blue">
-        <DataGrid x:Name="DG_Artist"></DataGrid>
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="15"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Name="labelNom" Grid.Row="1" Grid.Column="0" Content="Nom" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></Label>
+                <Label Name="labelAnnee" Grid.Row="3" Grid.Column="0" Content="Année" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" ></Label>
+                <Label Name="labelDescription" Grid.Row="5" Grid.Column="0" Content="Description" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></Label>
+                <TextBox Name="TextB_nom" Grid.Row="1" Grid.Column="1" Text="" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></TextBox>
+                <TextBox Name="TextB_annee" Grid.Row="3" Grid.Column="1" Text="" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></TextBox>
+                <TextBox Name="TextB_description" Grid.Row="5" Grid.Column="1" Text="" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"></TextBox>
+                <Button Grid.Column="3" Grid.Row="1" Content="Ajouter" Name="btnAjouter" Click="btnAjouter_Click"></Button>
+                <Button Grid.Column="3" Grid.Row="3" Content="Modifier" Name="btnModifier" Click="btnModifier_Click"></Button>
+                <Button Grid.Column="3" Grid.Row="5" Content="Supprimer" Name="btnSuppr" Click="btnSuppr_Click"></Button>
+                <Button Grid.Column="3" Grid.Row="7" Content="Quitter la séléction" Name="ExitSelect" Click="ExitSelect_Click"></Button>
+            </Grid>
+
+        </Border>
+        <Border Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <DataGrid Grid.Column="0" Name="DG_Artist" SelectionChanged="DG_Artist_SelectionChanged"></DataGrid>
+            </Grid>
+        </Border>
+
+
     </Grid>
+
 </UserControl>

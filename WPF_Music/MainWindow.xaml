@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Music"
         mc:Ignorable="d"
-        Title="Projet EF Core - Music" Height="450" Width="800" Closing="Window_Closing_1">
+        Title="Projet EF Core - Music" Height="600" Width="800" Closing="Window_Closing_1">
 
 
-    <Grid Background="orange">
+    <Grid Background="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>

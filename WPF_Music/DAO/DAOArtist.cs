@@ -76,7 +76,7 @@ namespace WPF_Music.DAO
                 Context.Artists.Add(artist);
                 Context.SaveChanges();
             }
-            return "Artist Ajouter";
+            return "L'artiste à bien été ajouté.";
         }
 
 
@@ -90,7 +90,7 @@ namespace WPF_Music.DAO
                 Context.Entry(artist).State = EntityState.Modified;
                 Context.SaveChanges();
             }
-            return "L'artiste est bien à jour";
+            return "L'artiste à bien été mis à jour.";
         }
 
 
@@ -110,7 +110,7 @@ namespace WPF_Music.DAO
 
 
             }
-            return "Artist Supprimer";
+            return "L'artiste à bien été supprimé";
         }
 
 

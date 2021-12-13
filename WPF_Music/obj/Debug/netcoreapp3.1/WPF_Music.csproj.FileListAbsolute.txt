@@ -59,4 +59,3 @@ C:\Users\SIO2\source\repos\WPF_Music_solution\WPF_Music\obj\Debug\netcoreapp3.1\
 C:\Users\SIO2\source\repos\WPF_Music_solution\WPF_Music\bin\Debug\netcoreapp3.1\HamburgerMenu.dll
 C:\Users\SIO2\source\repos\WPF_Music_solution\WPF_Music\bin\Debug\netcoreapp3.1\MaterialDesignColors.dll
 C:\Users\SIO2\source\repos\WPF_Music_solution\WPF_Music\bin\Debug\netcoreapp3.1\MaterialDesignThemes.Wpf.dll
-C:\Users\SIO2\source\repos\WPF_Music_solution\WPF_Music\obj\Debug\netcoreapp3.1\App.baml
