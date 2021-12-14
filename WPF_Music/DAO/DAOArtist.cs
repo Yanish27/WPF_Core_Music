@@ -19,6 +19,7 @@ namespace WPF_Music.DAO
             }
         }
 
+
         public Artist GetArtistByID(int id)
         {
             using (Context = new musicContext())
@@ -32,7 +33,8 @@ namespace WPF_Music.DAO
         {
             using (Context = new musicContext())
             {
-                var artist = Context.Artists.Where(a => a.Name == "Venki").ToList(); //On fait .ToList parce qu'il peut y avoir plusieurs venki. 
+                var artist = Context.Artists.Where(a => a.Name == "Venki").ToList(); 
+                //On fait .ToList parce qu'il peut y avoir plusieurs venki. 
                 return artist;
             }
         }
@@ -51,7 +53,8 @@ namespace WPF_Music.DAO
         {
             using (Context = new musicContext())
             {
-                var artistesAlbums = Context.Artists.Include(art => art.Albums).ToList();  //On fait une jointure avec la table Album grâce au Include
+                var artistesAlbums = Context.Artists.Include(art => art.Albums).ToList();  
+                //On fait une jointure avec la table Album grâce au Include
                 return artistesAlbums;
             }
         }

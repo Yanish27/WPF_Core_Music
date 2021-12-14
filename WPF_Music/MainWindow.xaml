@@ -30,7 +30,7 @@
                 <Button Grid.Column="1" x:Name="BTN_Home" Foreground="White" Background="LightBlue" Click="BTN_Home_Click">
                     <StackPanel Orientation="Vertical">
                         <Image Width="80" Height="50" Source="image/home-logo.png"></Image>
-                        <Label Content="Home" Foreground="White" HorizontalAlignment="Center"></Label>
+                        <Label Content="Acceuil" Foreground="White" HorizontalAlignment="Center"></Label>
                     </StackPanel>
 
 
@@ -38,13 +38,13 @@
                 <Button Grid.Column="2" x:Name="BTN_page_Gestion" Foreground="White" Background="LightBlue" Click="BTN_page_Gestion_Click">
                     <StackPanel Orientation="Vertical">
                         <Image Width="50" Height="50" Source="image/gestion-logo.png"></Image>
-                        <Label Content="Gestion" Foreground="White" HorizontalAlignment="Center"></Label>
+                        <Label Content="Gestion des artistes" Foreground="White" HorizontalAlignment="Center"></Label>
                     </StackPanel>
                 </Button>
                 <Button Grid.Column="3" x:Name="BTN_page_Configuration" Foreground="White" Background="LightBlue" Click="BTN_page_Configuration_Click">
                     <StackPanel Orientation="Vertical">
                         <Image Width="50" Height="50" Source="image/conf-logo.png"></Image>
-                        <Label Content="Configuration" Foreground="White" HorizontalAlignment="Center"></Label>
+                        <Label Content="Albums" Foreground="White" HorizontalAlignment="Center"></Label>
                     </StackPanel>
                 </Button>
                 <Button Grid.Column="4" x:Name="BTN_page_Info" Foreground="White" Background="LightBlue" Click="BTN_page_Info_Click">

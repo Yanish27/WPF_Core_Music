@@ -19,6 +19,7 @@ namespace WPF_Music.View
     /// </summary>
     public partial class UI_Gestion : UserControl
     {
+        int idArtiste;
 
         DAO_Artist daoart;
         public UI_Gestion()
@@ -30,6 +31,7 @@ namespace WPF_Music.View
             btnAjouter.IsEnabled = true;
             btnSuppr.IsEnabled = false;
             ExitSelect.IsEnabled = false;
+
         }
 
        
@@ -37,6 +39,52 @@ namespace WPF_Music.View
         private void btnModifier_Click(object sender, RoutedEventArgs e)
         {
 
+            // DG_Artist.SelectedIndex < DG_Artist.Items.Count-1 Car sinon on peut selectionner une ligne VIDE et cela créer des erreurs
+            if (DG_Artist.SelectedIndex != -1 && DG_Artist.SelectedIndex <= DG_Artist.Items.Count-1)
+            {
+                if (TextB_nom.Text != "")
+                {
+                    if (TextB_description.Text != "")
+                    {
+                        if (TextB_annee.Text != "")
+                        {
+                            // Creation d'un objet ArtistModif de type "Artist" via le constrcuteur Artist() dans la DAO
+                            Artist ArtistModif = new Artist();
+                
+                            // On définit les caractéristiques de l'objet
+                            ArtistModif.IdArtist = idArtiste;
+                            ArtistModif.Name = TextB_nom.Text;
+                            ArtistModif.Discription = TextB_description.Text;
+                            ArtistModif.Annee = TextB_annee.Text;
+
+                            // On execute la méthode UpdateArtist dans DAO Artist
+                            daoart.UpdateArtist(ArtistModif);
+
+                            // On réinitialise le DataGrid
+                            DG_Artist.ItemsSource = null;
+
+                            // On recharge le DataGrid
+                            DG_Artist.ItemsSource = daoart.GetArtists();
+                        }
+                        else
+                        {
+                            MessageBox.Show("L'année doit contenir uniquement des chiffres.", "Echec de la modification");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Merci de saisir une année", "Echec de la modification");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Merci de saisir une description", "Echec de la modification");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Merci de saisir un nom", "Echec de la modification");
+            }
         }
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
@@ -61,7 +109,7 @@ namespace WPF_Music.View
 
                         DG_Artist.ItemsSource = null;
                         DG_Artist.ItemsSource = daoart.GetArtists();
-                            resetTextBox();
+                        resetTextBox();
                         }
                         else
                         {
@@ -84,8 +132,8 @@ namespace WPF_Music.View
 
         private void DG_Artist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int idArtiste;
-            if (DG_Artist.SelectedIndex != -1)
+            // DG_Artist.SelectedIndex < DG_Artist.Items.Count-1 Car sinon on peut selectionner une ligne VIDE et cela créer des erreurs
+            if (DG_Artist.SelectedIndex != -1 && DG_Artist.SelectedIndex < DG_Artist.Items.Count-1)
             {
                 Artist artiste = DG_Artist.SelectedValue as Artist;
                 btnAjouter.IsEnabled = false;
@@ -128,6 +176,25 @@ namespace WPF_Music.View
                 DG_Artist.ItemsSource = null;
                 DG_Artist.ItemsSource = daoart.GetArtists();
             }
+        }
+
+        private void TextB_description_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Pour que l'utilisateur ne puisse pas ajouter de ligne manuellement
+        /// Il doit passer par le fomulaire.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DG_Artist_AddingNewItem(object sender, AddingNewItemEventArgs e)
+        {
+            MessageBox.Show("Merci de saisir les informations du nouvel artiste via le formulaire au dessus.", "Echec");
+
+            DG_Artist.ItemsSource = daoart.GetArtists();
+            DG_Artist.SelectedIndex = -1;
+
         }
     }
 }

@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_Music.DAO;
+using WPF_Music.Music;
 
 namespace WPF_Music.View
 {
@@ -18,9 +20,21 @@ namespace WPF_Music.View
     /// </summary>
     public partial class UI_Configuration : UserControl
     {
-        public UI_Configuration()
+
+
+        DAO_Artist daoart;
+            public UI_Configuration()
         {
             InitializeComponent();
+
+            daoart = new DAO_Artist();
+
+            foreach(Artist artist in  daoart.GetArtists())
+            {
+                CB_Artist.Items.Add(artist.Name);
+            }
+
+
         }
     }
 }
