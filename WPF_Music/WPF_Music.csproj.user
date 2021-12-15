@@ -21,6 +21,9 @@
     <Compile Update="View\UI_Info.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\UI_Rating.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -36,6 +39,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\UI_Info.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\UI_Rating.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

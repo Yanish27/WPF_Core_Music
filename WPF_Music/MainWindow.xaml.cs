@@ -66,5 +66,10 @@ namespace WPF_Music
                 e.Cancel = true;
             }
         }
+
+        private void BTN_Page_Raiting_Click(object sender, RoutedEventArgs e)
+        {
+            PartieCentrale.Content = new View.UI_Rating();
+        }
     }
 }

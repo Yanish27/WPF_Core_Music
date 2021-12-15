@@ -26,13 +26,16 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="250"></ColumnDefinition>
-                    <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="50"></ColumnDefinition>
-                    <ColumnDefinition Width="100"></ColumnDefinition>
-                    <ColumnDefinition Width="50"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <ComboBox Grid.Column="1" Name="CB_Artist" />
 
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="1" Grid.Row="1" Foreground="White" Content="Sélectionnez un artiste" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+                <ComboBox Grid.Column="1" Grid.Row="2" Name="CB_Artist" SelectionChanged="CB_Artist_SelectionChanged" />
+                <Label Grid.Column="1" Grid.Row="3" Foreground="White" Content="Nom du nouvel album" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+                <TextBox Grid.Column="1" Grid.Row="4" Name="TB_Album"></TextBox>
+                <Button Grid.Row="6" Grid.Column="1" Content="Ajouter l'album" Name="btnAjoutAlbum" Click="btnAjoutAlbum_Click" />
 
             </Grid>
 
@@ -42,7 +45,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                
+
             </Grid>
         </Border>
 

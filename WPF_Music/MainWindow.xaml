@@ -26,6 +26,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="1" x:Name="BTN_Home" Foreground="White" Background="LightBlue" Click="BTN_Home_Click">
                     <StackPanel Orientation="Vertical">
@@ -47,12 +48,19 @@
                         <Label Content="Albums" Foreground="White" HorizontalAlignment="Center"></Label>
                     </StackPanel>
                 </Button>
-                <Button Grid.Column="4" x:Name="BTN_page_Info" Foreground="White" Background="LightBlue" Click="BTN_page_Info_Click">
+                <Button Grid.Column="4" x:Name="BTN_Page_Raiting" Foreground="White" Background="LightBlue" Click="BTN_Page_Raiting_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Width="50" Height="50" Source="image/raiting-logo.png"></Image>
+                        <Label Content="Notes" Foreground="White" HorizontalAlignment="Center"></Label>
+                    </StackPanel>
+                </Button>
+                <Button Grid.Column="5" x:Name="BTN_page_Info" Foreground="White" Background="LightBlue" Click="BTN_page_Info_Click">
                     <StackPanel Orientation="Vertical">
                         <Image Width="50" Height="50" Source="image/info.png"></Image>
                         <Label Content="Info" Foreground="White" HorizontalAlignment="Center"></Label>
                     </StackPanel>
                 </Button>
+
             </Grid>
         </Border>
 

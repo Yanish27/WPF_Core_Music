@@ -49,7 +49,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <DataGrid Grid.Column="0" Name="DG_Artist" SelectionChanged="DG_Artist_SelectionChanged" AddingNewItem="DG_Artist_AddingNewItem"/>
+                <DataGrid Grid.Column="0" Name="DG_Artist" SelectionChanged="DG_Artist_SelectionChanged" AddingNewItem="DG_Artist_AddingNewItem" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ColumnWidth="*"/>
             </Grid>
         </Border>
 

@@ -151,6 +151,11 @@ namespace WPF_Music.View
 
         private void ExitSelect_Click(object sender, RoutedEventArgs e)
         {
+            ExitSelect_FN();
+        }
+       
+        public void ExitSelect_FN()
+        {
             DG_Artist.SelectedIndex = -1;
             resetTextBox();
 
@@ -159,7 +164,6 @@ namespace WPF_Music.View
             btnSuppr.IsEnabled = false;
             ExitSelect.IsEnabled = false;
         }
-
         public void resetTextBox()
         {
 
@@ -194,6 +198,8 @@ namespace WPF_Music.View
 
             DG_Artist.ItemsSource = daoart.GetArtists();
             DG_Artist.SelectedIndex = -1;
+
+            ExitSelect_FN();
 
         }
     }
