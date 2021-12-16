@@ -141,7 +141,7 @@ namespace WPF_Music.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPF_Music;V1.0.0.0;component/view/ui_gestion.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPF_Music;component/view/ui_gestion.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\UI_Gestion.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

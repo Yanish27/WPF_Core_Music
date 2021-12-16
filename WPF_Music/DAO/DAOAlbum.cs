@@ -7,11 +7,19 @@ using WPF_Music.Music;
 using Microsoft.EntityFrameworkCore;
 namespace WPF_Music.DAO
 {
-
+    /// <summary>
+    /// DAO Album : Data Access Object pour accéder aux Albums
+    /// </summary>
     public class DAO_Album
     {
 
         private musicContext Context;
+
+        /// <summary>
+        /// Permet d'ajouter un Album
+        /// </summary>
+        /// <param name="album">Un objet de type Album</param>
+        /// <returns>String L'artiste à bien été ajouté.</returns>
         public string AddAlbum(Album album)
         {
             using (Context = new musicContext())
@@ -19,8 +27,52 @@ namespace WPF_Music.DAO
                 Context.Albums.Add(album);
                 Context.SaveChanges();
             }
-            return "L'artiste à bien été ajouté.";
+            return "L'album à bien été ajouté.";
         }
+
+        public IEnumerable<Album> GetAlbum()
+        {
+            using (Context = new musicContext())
+            {
+                var AllAlbum = Context.Albums.ToList();
+                return AllAlbum;
+            }
+        }
+
+        public List<Album> getAlbumByName(string name)
+        {
+            using (Context = new musicContext())
+            {
+                var alb = Context.Albums.Where(a => a.Titre == name).ToList();
+                // On fait .ToList parce qu'il peut y avoir plusieurs artiste qui ont le même nom
+                return alb;
+            }
+        }
+
+
+        /// <summary>
+        /// Permet de supprimer un album
+        /// </summary>
+        /// <param name="ID">ID de l'album</param>
+        /// <returns></returns>
+
+        public string DeleteAlbum(int ID)
+        {
+            using (Context = new musicContext())
+            {
+                var itemToRemove = Context.Albums.SingleOrDefault(x => x.IdAlbums == ID);   //On supprime par la clé primaire 
+                if (itemToRemove != null)
+                {
+                    Context.Albums.Remove(itemToRemove);
+                    Context.SaveChanges();
+                }
+
+
+
+            }
+            return "L'album à bien été supprimé.";
+        }
+
 
     }
 }

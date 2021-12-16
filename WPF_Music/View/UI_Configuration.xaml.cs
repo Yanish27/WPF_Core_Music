@@ -23,16 +23,26 @@ namespace WPF_Music.View
 
         DAO_Artist daoart;
         DAO_Album daoalbum;
+
+        int art_sel;
+        int alb_sel;
             public UI_Configuration()
         {
             InitializeComponent();
 
             daoart = new DAO_Artist();
- 
-            foreach(Artist artist in  daoart.GetArtists())
+            daoalbum = new DAO_Album();
+
+            foreach (Artist artist in  daoart.GetArtists())
             {
                 CB_Artist.Items.Add(artist.Name);
 
+            }
+
+
+            foreach (Album album in daoalbum.GetAlbum())
+            {
+                CB_Album.Items.Add(album.Titre);
             }
 
 
@@ -42,26 +52,49 @@ namespace WPF_Music.View
         {
 
             Album album = new Album();
-            album.ArtistIdArtist = 2;
-            album.Titre = "La danse ";
+            album.ArtistIdArtist = art_sel;
+            album.Titre = TB_Album.Text;
 
             daoalbum.AddAlbum(album);
+
+            MessageBox.Show("L'album à bien été ajouté.");
+            TB_Album.Text = "";
 
         }
 
         private void CB_Artist_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            // Création d'une variable artist de type List de Artist
             List <Artist> artiste = new List<Artist>();
 
-
+            // On met dans la variable artiste la liste de Artist
             artiste = daoart.GetArtistByName(CB_Artist.SelectedItem.ToString());
 
-            MessageBox.Show("ID DE LARTISTE : " + artiste[0].IdArtist);
+            // On prend volontairement le premier résultat qui nous est retourné.
+            // art_sel est une variable globale. Artiste Selectionné.
+            art_sel = artiste[0].IdArtist;
+            // DEBUG : MessageBox.Show("ID DE LARTISTE : " + artiste[0].IdArtist);
+        }
 
+        private void CB_Album_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Création d'une variable artist de alb List de Album
+            List<Album> alb = new List<Album>();
+           
+            // On met dans la variable alb la liste de Album
+            alb = daoalbum.getAlbumByName(CB_Album.SelectedItem.ToString());
 
+            // On prend volontairement le premier résultat qui nous est retourné.
+            // alb_sel est une variable globale. Artiste Selectionné.
+            alb_sel = alb[0].IdAlbums;
             
+            // DEBUG : MessageBox.Show("ID DE L'ALBUM : " + alb_sel);
+        }
 
+        private void btnSupprAlbum_Click(object sender, RoutedEventArgs e)
+        {
+            var res = daoalbum.DeleteAlbum(alb_sel);
+            MessageBox.Show(res);
         }
     }
 }

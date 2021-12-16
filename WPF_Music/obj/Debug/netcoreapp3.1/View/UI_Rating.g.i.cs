@@ -53,7 +53,7 @@ namespace WPF_Music.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPF_Music;V1.0.0.0;component/view/ui_rating.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPF_Music;component/view/ui_rating.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\UI_Rating.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

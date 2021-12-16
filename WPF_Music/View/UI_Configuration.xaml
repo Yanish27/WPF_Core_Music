@@ -9,7 +9,7 @@
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="200"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
             <Grid>
@@ -26,11 +26,11 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="250"></ColumnDefinition>
-
                     <ColumnDefinition Width="*"></ColumnDefinition>
-
                     <ColumnDefinition Width="250"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Foreground="White" Content="Ajout d'un album" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
                 <Label Grid.Column="1" Grid.Row="1" Foreground="White" Content="Sélectionnez un artiste" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
                 <ComboBox Grid.Column="1" Grid.Row="2" Name="CB_Artist" SelectionChanged="CB_Artist_SelectionChanged" />
                 <Label Grid.Column="1" Grid.Row="3" Foreground="White" Content="Nom du nouvel album" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
@@ -42,11 +42,29 @@
         </Border>
         <Border Grid.Row="1">
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="15"></RowDefinition>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Grid.Row="2" Foreground="White" Content="Supression d'un album" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+                <Label Grid.Column="1" Grid.Row="3" Foreground="White" Content="Sélectionnez un album" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+                <ComboBox Grid.Column="1" Grid.Row="4" Name="CB_Album" SelectionChanged="CB_Album_SelectionChanged" />
 
+                <Button Grid.Row="6" Grid.Column="1" Content="Supprimer l'album" Name="btnSupprAlbum" Click="btnSupprAlbum_Click"/>
             </Grid>
+
         </Border>
 
 
