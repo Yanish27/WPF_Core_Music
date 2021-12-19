@@ -9,6 +9,10 @@
 
 
     <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="651*"/>
+            <ColumnDefinition Width="149*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
@@ -17,18 +21,19 @@
 
         <!-- *************************************   Menu       ********************************-->
 
-        <Border  Grid.Row="0">
+        <Border  Grid.Row="0" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="57*"/>
+                    <ColumnDefinition Width="57*"/>
+                    <ColumnDefinition Width="57*"/>
+                    <ColumnDefinition Width="57*"/>
+                    <ColumnDefinition Width="57*"/>
+                    <ColumnDefinition Width="57*"/>
+                    <ColumnDefinition Width="43*"/>
+                    <ColumnDefinition Width="14*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="1" x:Name="BTN_Home" Foreground="White" Background="LightBlue" Click="BTN_Home_Click">
+                <Button x:Name="BTN_Home" Foreground="White" Background="LightBlue" Click="BTN_Home_Click" Grid.ColumnSpan="3" Margin="114,0,114,0">
                     <StackPanel Orientation="Vertical">
                         <Image Width="80" Height="50" Source="image/home-logo.png"></Image>
                         <Label Content="Acceuil" Foreground="White" HorizontalAlignment="Center"></Label>
@@ -36,7 +41,7 @@
 
 
                 </Button>
-                <Button Grid.Column="2" x:Name="BTN_page_Gestion" Foreground="White" Background="LightBlue" Click="BTN_page_Gestion_Click">
+                <Button Grid.Column="2" x:Name="BTN_page_Gestion" Foreground="White" Background="LightBlue" Click="BTN_page_Gestion_Click" Grid.ColumnSpan="2" Margin="0,0,114,0">
                     <StackPanel Orientation="Vertical">
                         <Image Width="50" Height="50" Source="image/gestion-logo.png"></Image>
                         <Label Content="Gestion des artistes" Foreground="White" HorizontalAlignment="Center"></Label>
@@ -48,13 +53,13 @@
                         <Label Content="Albums" Foreground="White" HorizontalAlignment="Center"></Label>
                     </StackPanel>
                 </Button>
-                <Button Grid.Column="4" x:Name="BTN_Page_Raiting" Foreground="White" Background="LightBlue" Click="BTN_Page_Raiting_Click">
+                <Button Grid.Column="3" x:Name="BTN_Page_Raiting" Foreground="White" Background="LightBlue" Click="BTN_Page_Raiting_Click" Grid.ColumnSpan="2" Margin="114,0,0,0">
                     <StackPanel Orientation="Vertical">
                         <Image Width="50" Height="50" Source="image/raiting-logo.png"></Image>
                         <Label Content="Notes" Foreground="White" HorizontalAlignment="Center"></Label>
                     </StackPanel>
                 </Button>
-                <Button Grid.Column="5" x:Name="BTN_page_Info" Foreground="White" Background="LightBlue" Click="BTN_page_Info_Click">
+                <Button Grid.Column="4" x:Name="BTN_page_Info" Foreground="White" Background="LightBlue" Click="BTN_page_Info_Click" Grid.ColumnSpan="3" Margin="114,0,86,0">
                     <StackPanel Orientation="Vertical">
                         <Image Width="50" Height="50" Source="image/info.png"></Image>
                         <Label Content="Info" Foreground="White" HorizontalAlignment="Center"></Label>
@@ -68,16 +73,16 @@
 
 
         <!-- *************************************   Menu       ********************************-->
-        <Grid Grid.Row="2" Name="Window_Container"></Grid>
-        
-        
+        <Grid Grid.Row="1" Name="Window_Container" Grid.ColumnSpan="2" Margin="0,459,0,0" Grid.RowSpan="2"></Grid>
+
+
         <!--- corps -->
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Frame x:Name="PartieCentrale" NavigationUIVisibility="Hidden" />
         </Grid>
         <!-- fin page -->
         <!-- *************************************   Footer       ********************************-->
-        <Grid Grid.Row="2" Name="footer">
+        <Grid Grid.Row="1" Name="footer" Grid.ColumnSpan="2" Margin="0,459,0,0" Grid.RowSpan="2">
             <Label Name="Footer" Content="HALAOUI Yanis - SIO2" HorizontalAlignment="Center"  VerticalAlignment="Center" Foreground="White"></Label>
         </Grid>
 

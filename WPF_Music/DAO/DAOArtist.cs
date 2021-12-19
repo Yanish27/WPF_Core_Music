@@ -29,6 +29,19 @@ namespace WPF_Music.DAO
             }
         }
 
+        public int CountArtist()
+        {
+            int nb_artist = 0;
+            using (Context = new musicContext())
+            {
+                foreach (var art in Context.Artists.ToList())
+                {
+                    nb_artist = nb_artist + 1;
+                }
+                return nb_artist;
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>

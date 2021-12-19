@@ -24,7 +24,14 @@ namespace WPF_Music.View
             InitializeComponent();
             DAO_Album DaoAlb;
             DaoAlb = new DAO_Album();
-            MessageBox.Show(DaoAlb.CountAlbum().ToString());
+
+            DAO_Artist DaoArt;
+            DaoArt = new DAO_Artist();
+
+            lbl_nb_art.Content = "Nous avons actuellement un catalogue de " + DaoArt.CountArtist().ToString() + " artistes pour un total de "
+                + DaoAlb.CountAlbum().ToString() + " albums.";
+
+
         }
     }
 }

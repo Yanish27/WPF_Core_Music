@@ -175,7 +175,9 @@ namespace WPF_Music.View
             if (DG_Artist.SelectedIndex != -1)
             {
                 Artist artiste = DG_Artist.SelectedValue as Artist;
+                string y = new DAO_Album().DeleteAlbumByArtistId(artiste.IdArtist);
                 string r = new DAO_Artist().DeleteArtist(artiste.IdArtist);
+
                 MessageBox.Show(r, "Suppression d'un artiste");
                 DG_Artist.ItemsSource = null;
                 DG_Artist.ItemsSource = daoart.GetArtists();

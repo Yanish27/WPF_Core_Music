@@ -22,7 +22,6 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
-
             <Label Name="lbl_desc1" Content="Ce logiciel a été édité en C# / WPF" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></Label>
         </Border>
         <Border Grid.Row="1">

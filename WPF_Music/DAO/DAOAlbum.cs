@@ -63,6 +63,29 @@ namespace WPF_Music.DAO
         }
 
 
+        public string DeleteAlbumByArtistId(int ID)
+        {
+            using (Context = new musicContext())
+            {
+
+
+                foreach (var m in Context.Albums.Where(x => x.ArtistIdArtist == ID))
+                {
+                    Context.Albums.Remove(m);
+                }
+
+
+                Context.SaveChanges();
+
+
+
+
+            }
+            return "L'artiste à bien été supprimé.";
+        }
+
+
+
         /// <summary>
         /// Permet de supprimer un album
         /// </summary>
@@ -81,10 +104,10 @@ namespace WPF_Music.DAO
                 }
 
 
-
             }
             return "L'album à bien été supprimé.";
         }
+
 
 
     }
