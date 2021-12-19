@@ -34,8 +34,8 @@ namespace WPF_Music.DAO
         {
             using (Context = new musicContext())
             {
-                var AllAlbum = Context.Albums.ToList();
-                return AllAlbum;
+                var AllArtists = Context.Albums.ToList();
+                return AllArtists;
             }
         }
 
@@ -46,6 +46,19 @@ namespace WPF_Music.DAO
                 var alb = Context.Albums.Where(a => a.Titre == name).ToList();
                 // On fait .ToList parce qu'il peut y avoir plusieurs artiste qui ont le même nom
                 return alb;
+            }
+        }
+
+        public int CountAlbum()
+        {
+            int nb_album = 0;
+            using (Context = new musicContext())
+            {
+               foreach (var alb in Context.Albums.ToList())
+                {
+                    nb_album = nb_album + 1;
+                }
+                return nb_album;
             }
         }
 

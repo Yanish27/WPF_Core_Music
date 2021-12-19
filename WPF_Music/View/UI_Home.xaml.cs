@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_Music.DAO;
 
 namespace WPF_Music.View
 {
@@ -21,6 +22,9 @@ namespace WPF_Music.View
         public UI_Home()
         {
             InitializeComponent();
+            DAO_Album DaoAlb;
+            DaoAlb = new DAO_Album();
+            MessageBox.Show(DaoAlb.CountAlbum().ToString());
         }
     }
 }

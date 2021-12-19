@@ -189,3 +189,11 @@ C:\Users\SIO2\Desktop\csharp\WPF_Core_Music\WPF_Music\bin\Debug\netcoreapp3.1\im
 C:\Users\SIO2\Desktop\csharp\WPF_Core_Music\WPF_Music\bin\Debug\netcoreapp3.1\image\gestion-logo.png
 C:\Users\SIO2\Desktop\csharp\WPF_Core_Music\WPF_Music\bin\Debug\netcoreapp3.1\image\home-logo.png
 C:\Users\SIO2\Desktop\csharp\WPF_Core_Music\WPF_Music\bin\Debug\netcoreapp3.1\image\info.png
+C:\Users\Desk\Documents\WPF_Core_Music\WPF_Music\bin\Debug\netcoreapp3.1\image\conf-logo.png
+C:\Users\Desk\Documents\WPF_Core_Music\WPF_Music\bin\Debug\netcoreapp3.1\image\gestion-logo.png
+C:\Users\Desk\Documents\WPF_Core_Music\WPF_Music\bin\Debug\netcoreapp3.1\image\home-logo.png
+C:\Users\Desk\Documents\WPF_Core_Music\WPF_Music\bin\Debug\netcoreapp3.1\image\info.png
+C:\Users\Desk\Documents\WPF_Core_Music\WPF_Music\bin\Debug\netcoreapp3.1\image\raiting-logo.png
+C:\Users\Desk\Documents\WPF_Core_Music\WPF_Music\obj\Debug\netcoreapp3.1\View\UI_Rating.g.cs
+C:\Users\Desk\Documents\WPF_Core_Music\WPF_Music\obj\Debug\netcoreapp3.1\WPF_Music_Content.g.cs
+C:\Users\Desk\Documents\WPF_Core_Music\WPF_Music\obj\Debug\netcoreapp3.1\View\UI_Rating.baml
