@@ -31,6 +31,8 @@ namespace WPF_Music
             InitializeComponent();
             // Création d'un objet appelée daoart depuis le constructeur DAO_Artist();
             daoart = new DAO_Artist();
+            
+
         }
 
         private void BTN_Home_Click(object sender, RoutedEventArgs e)

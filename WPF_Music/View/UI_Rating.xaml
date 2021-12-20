@@ -6,6 +6,41 @@
              xmlns:local="clr-namespace:WPF_Music.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="15"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="250"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Foreground="White" Content="Noter un album" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+                <Label Grid.Column="1" Grid.Row="1" Foreground="White" Content="Sélectionnez un album" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+                <ComboBox Grid.Column="1" Grid.Row="2" Name="CB_Album" SelectionChanged="CB_Album_SelectionChanged" />
+                <Label Grid.Column="1" Grid.Row="3" Foreground="White" Content="Nom du nouvel album" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+                <ComboBox Grid.Column="1" Grid.Row="4" Name="CB_note"/>
+                <Button Grid.Row="6" Grid.Column="1" Content="Noter l'album" Name="btnNoteAlbum" Click="btnNoteAlbum_Click"/>
+                <Label Grid.Column="1" Grid.Row="7" Foreground="White" Content="*****" VerticalAlignment="Top" HorizontalAlignment="Center" Name="NB_Alb_By_Rat"></Label>
+                <Label Grid.Column="1" Grid.Row="8" Foreground="White" Content="*****" VerticalAlignment="Top" HorizontalAlignment="Center" Name="NB_Alb_By_Rat2"></Label>
+             
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>

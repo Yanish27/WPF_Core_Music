@@ -29,6 +29,7 @@ namespace WPF_Music.DAO
             }
         }
 
+        
         public int CountArtist()
         {
             int nb_artist = 0;

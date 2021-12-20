@@ -23,13 +23,13 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Name="lbl_desc1" Content="Bienvenue sur le client lourd de la maison de disque OMEGA" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Grid.Column="2" />
         <Label Name="lbl_nb_art" Grid.Row="1" Content="--" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Grid.Column="2"></Label>
         <Label Name="lbl_desc2" Grid.Row="2" Content="Grâce à notre logiciel, vous pouvez : " HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Grid.Column="2"></Label>
-        <Label Name="lbl_desc3" Grid.Row="3" Content="Gestion des artistes : Ajouter / Modifier / Supprimer des artistes." HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Grid.Column="2"> </Label>
-
+        <Label Name="lbl_desc3" Grid.Row="3" Content="Gestion des artistes : Ajouter / Modifier / Supprimer des artistes." HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Grid.Column="2"></Label>
+        <Label Name="lbl_desc4" Grid.Row="4" Content="Albums : Attribuer un album a un artiste / Supprimer un album" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Grid.Column="2"></Label>
+        <Label Name="lbl_desc5" Grid.Row="5" Content="Notes : Noter / modifier la note d'un album" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Grid.Column="2"></Label>
+        <Label Name="lbl_desc6" Grid.Row="6" Content="Info : Informations sur ce logiciel, frameworks utilisés, copyright..." HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Grid.Column="2"></Label>
     </Grid>
 </UserControl>

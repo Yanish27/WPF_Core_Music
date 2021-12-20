@@ -13,6 +13,7 @@ namespace WPF_Music.DAO
     public class DAO_Album
     {
 
+        // On initialise le conext
         private musicContext Context;
 
         /// <summary>
@@ -67,19 +68,11 @@ namespace WPF_Music.DAO
         {
             using (Context = new musicContext())
             {
-
-
                 foreach (var m in Context.Albums.Where(x => x.ArtistIdArtist == ID))
                 {
                     Context.Albums.Remove(m);
                 }
-
-
                 Context.SaveChanges();
-
-
-
-
             }
             return "L'artiste à bien été supprimé.";
         }

@@ -27,7 +27,7 @@ namespace WPF_Music.View
         int art_sel;
         int alb_sel;
             public UI_Configuration()
-        {
+            {
             InitializeComponent();
 
             daoart = new DAO_Artist();
@@ -38,27 +38,27 @@ namespace WPF_Music.View
                 CB_Artist.Items.Add(artist.Name);
 
             }
-
-
             foreach (Album album in daoalbum.GetAlbum())
             {
                 CB_Album.Items.Add(album.Titre);
             }
 
-
         }
 
         private void btnAjoutAlbum_Click(object sender, RoutedEventArgs e)
         {
-
-            Album album = new Album();
-            album.ArtistIdArtist = art_sel;
-            album.Titre = TB_Album.Text;
-
-            daoalbum.AddAlbum(album);
-
-            MessageBox.Show("L'album à bien été ajouté.");
-            TB_Album.Text = "";
+            if (TB_Album.Text != "")
+            {
+                Album album = new Album();
+                album.ArtistIdArtist = art_sel;
+                album.Titre = TB_Album.Text;
+                daoalbum.AddAlbum(album);
+                MessageBox.Show("L'album à bien été ajouté.");
+                TB_Album.Text = "";
+            } else
+            {
+                MessageBox.Show("Merci de saisir un nom d'album");
+            }
 
         }
 

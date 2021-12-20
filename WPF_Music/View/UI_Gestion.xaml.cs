@@ -31,14 +31,12 @@ namespace WPF_Music.View
             btnAjouter.IsEnabled = true;
             btnSuppr.IsEnabled = false;
             ExitSelect.IsEnabled = false;
-
         }
 
        
 
         private void btnModifier_Click(object sender, RoutedEventArgs e)
-        {
-
+        { 
             // DG_Artist.SelectedIndex < DG_Artist.Items.Count-1 Car sinon on peut selectionner une ligne VIDE et cela créer des erreurs
             if (DG_Artist.SelectedIndex != -1 && DG_Artist.SelectedIndex <= DG_Artist.Items.Count-1)
             {
@@ -170,17 +168,35 @@ namespace WPF_Music.View
             TextB_nom.Text = TextB_description.Text = TextB_annee.Text = "";
         }
 
+        /// <summary>
+        /// Lorsque l'utilisateur clique sur le button "supprimer"
+        /// </summary
         private void btnSuppr_Click(object sender, RoutedEventArgs e)
         {
+
             if (DG_Artist.SelectedIndex != -1)
             {
-                Artist artiste = DG_Artist.SelectedValue as Artist;
-                string y = new DAO_Album().DeleteAlbumByArtistId(artiste.IdArtist);
-                string r = new DAO_Artist().DeleteArtist(artiste.IdArtist);
 
-                MessageBox.Show(r, "Suppression d'un artiste");
-                DG_Artist.ItemsSource = null;
-                DG_Artist.ItemsSource = daoart.GetArtists();
+                MessageBox.Show("Erreur : L'artiste ne peut être supprimé.");
+                /*
+                 * #### La supression, des artistes ne fonctionne pas SI l'artiste possède au moins 1 album
+                 * On ne peut pas supprimer une clé primaire d'une table qui est clé étrangère d'une autre table.
+                 * 
+                 * Solutions : 
+                 * 1] Ajouter "ON DELETE CASCADE" dans la requête SQL. J'ai cherché, je n'ai pas trouvé comment ajouter cela
+                 * 
+                 * 2] Faire une fonction pour supprimer les albums par IDArtist : J'ai tenté quelque chose dans la fonction DeleteAlbumByArtistId 
+                 * Dans DAO_Album
+                 * 
+                 * Je n'ai pas eu le temps de voir +, mais l'idée est là 
+                  Artist artiste = DG_Artist.SelectedValue as Artist;
+                  string y = new DAO_Album().DeleteAlbumByArtistId(artiste.IdArtist);
+                  string r = new DAO_Artist().DeleteArtist(artiste.IdArtist);
+
+                  MessageBox.Show(r, "Suppression d'un artiste");
+                  DG_Artist.ItemsSource = null;
+                  DG_Artist.ItemsSource = daoart.GetArtists();
+                */
             }
         }
 
