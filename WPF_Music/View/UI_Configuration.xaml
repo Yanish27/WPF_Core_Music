@@ -13,6 +13,7 @@
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
             <Grid>
+        <!-- *************************************   Definition des colonnes et des rows       ********************************-->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -30,6 +31,7 @@
                     <ColumnDefinition Width="250"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
+<!-- *************************************   Initialisation des éléments       ********************************-->
                 <Label Grid.Column="0" Grid.Row="0" Foreground="White" Content="Ajout d'un album" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
                 <Label Grid.Column="1" Grid.Row="1" Foreground="White" Content="Sélectionnez un artiste" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
                 <ComboBox Grid.Column="1" Grid.Row="2" Name="CB_Artist" SelectionChanged="CB_Artist_SelectionChanged" />
@@ -42,6 +44,8 @@
         </Border>
         <Border Grid.Row="1">
             <Grid>
+            
+        <!-- *************************************   Definition des colonnes et des rows       ********************************-->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -58,6 +62,8 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="250"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                
+<!-- *************************************   Initialisation des éléments       ********************************-->
                 <Label Grid.Column="0" Grid.Row="2" Foreground="White" Content="Supression d'un album" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
                 <Label Grid.Column="1" Grid.Row="3" Foreground="White" Content="Sélectionnez un album" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
                 <ComboBox Grid.Column="1" Grid.Row="4" Name="CB_Album" SelectionChanged="CB_Album_SelectionChanged" />

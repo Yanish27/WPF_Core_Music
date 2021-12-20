@@ -20,13 +20,19 @@ namespace WPF_Music.View
     public partial class UI_Gestion : UserControl
     {
         int idArtiste;
-
+         
+        // Création d'une instance de la classe DAO_Artist
         DAO_Artist daoart;
         public UI_Gestion()
         {
             InitializeComponent();
+            // Création d'un objet de type DAO_Artist
             daoart = new DAO_Artist();
+            // On récupère la liste des artistes
+            // On ajoute la liste des artistes à la datagrid
             DG_Artist.ItemsSource = daoart.GetArtists();
+            
+            // On active // desactive des bouttons
             btnModifier.IsEnabled = false;
             btnAjouter.IsEnabled = true;
             btnSuppr.IsEnabled = false;
@@ -40,10 +46,13 @@ namespace WPF_Music.View
             // DG_Artist.SelectedIndex < DG_Artist.Items.Count-1 Car sinon on peut selectionner une ligne VIDE et cela créer des erreurs
             if (DG_Artist.SelectedIndex != -1 && DG_Artist.SelectedIndex <= DG_Artist.Items.Count-1)
             {
+                // Si le nom n'est pas vide
                 if (TextB_nom.Text != "")
                 {
+                    // Si la description n'est pas vide
                     if (TextB_description.Text != "")
                     {
+                        // Si l'année n'est pas vide
                         if (TextB_annee.Text != "")
                         {
                             // Creation d'un objet ArtistModif de type "Artist" via le constrcuteur Artist() dans la DAO
@@ -66,64 +75,91 @@ namespace WPF_Music.View
                         }
                         else
                         {
+                            // On affiche un message d'erreur
                             MessageBox.Show("L'année doit contenir uniquement des chiffres.", "Echec de la modification");
                         }
                     }
                     else
                     {
+                        // On affiche un message d'erreur
                         MessageBox.Show("Merci de saisir une année", "Echec de la modification");
                     }
                 }
                 else
                 {
+                    // On affiche un message d'erreur
                     MessageBox.Show("Merci de saisir une description", "Echec de la modification");
                 }
             }
             else
             {
+                // On affiche un message d'erreur   
                 MessageBox.Show("Merci de saisir un nom", "Echec de la modification");
             }
         }
 
         private void btnAjouter_Click(object sender, RoutedEventArgs e)
         {
+            // Si le nom n'est pas vide
             if (TextB_nom.Text != "")
             {
+                // Si la description n'est pas vide
                 if (TextB_description.Text != "")
                 {
+                    // Si l'année n'est pas vide
                     if (TextB_annee.Text != "")
                     {
+                        // Verification de l'année
                         bool verif_annee = Int32.TryParse(TextB_annee.Text, out int annee);
+
+                        // Si l'année est bien un nombre
                         if(verif_annee == true)
                         {
 
+                        // Creation d'un objet artiste de type "Artist" via le constrcuteur Artist() dans la DAO
                         Artist artiste = new Artist();
+                    
+                        // On définit les caractéristiques de l'objet
                         artiste.Name = TextB_nom.Text;
                         artiste.Discription = TextB_description.Text;
-                        artiste.Annee = annee.ToString();
 
+                        // On convertit l'année en string car c'est stocké comme ça dans la bdd
+                        artiste.Annee = annee.ToString();
+                        
+                        // On execute la méthode AddArtist dans DAO Artist
+                        // On recupere un message de retour
                         string Message = new DAO_Artist().AddArtist(artiste);
+                        // On affiche le message de retour
                         MessageBox.Show(Message, "Ajout d'un artiste");
 
+                        // On réinitialise le DataGrid
                         DG_Artist.ItemsSource = null;
+                        
+                        // On recharge le DataGrid
                         DG_Artist.ItemsSource = daoart.GetArtists();
+
+                        // On vide les champs
                         resetTextBox();
                         }
                         else
                         {
+                            // On affiche un message d'erreur
                             MessageBox.Show("L'année doit contenir uniquement des chiffres.", "Echec de l'ajout");
                         }
                     } else {
+                        // On affiche un message d'erreur
                         MessageBox.Show("Merci de saisir une année", "Echec de l'ajout");
                     }
                 }
                 else
                 {
+                    // On affiche un message d'erreur
                     MessageBox.Show("Merci de saisir une description", "Echec de l'ajout");
                 }
             }
             else
             {
+                // On affiche un message d'erreur
                 MessageBox.Show("Merci de saisir un nom", "Echec de l'ajout");
             }
         }
@@ -133,15 +169,23 @@ namespace WPF_Music.View
             // DG_Artist.SelectedIndex < DG_Artist.Items.Count-1 Car sinon on peut selectionner une ligne VIDE et cela créer des erreurs
             if (DG_Artist.SelectedIndex != -1 && DG_Artist.SelectedIndex < DG_Artist.Items.Count-1)
             {
+                // Création d'un objet Artist via le constrcuteur Artist() dans la DAO
                 Artist artiste = DG_Artist.SelectedValue as Artist;
                 btnAjouter.IsEnabled = false;
                 btnModifier.IsEnabled = true;
                 btnSuppr.IsEnabled = true;
                 ExitSelect.IsEnabled = true;
-
+                
+                // On recupere l'id de l'artiste
                 idArtiste = artiste.IdArtist;
+
+                // On recupere le nom de l'artiste
                 TextB_nom.Text = artiste.Name;
+
+                // On recupere la description de l'artiste
                 TextB_description.Text = artiste.Discription;
+
+                // On recupere l'année de l'artiste
                 TextB_annee.Text = artiste.Annee;
 
             }
@@ -153,7 +197,8 @@ namespace WPF_Music.View
         }
        
         public void ExitSelect_FN()
-        {
+        { 
+            // On déselectionne la dataGrid
             DG_Artist.SelectedIndex = -1;
             resetTextBox();
 
@@ -164,7 +209,7 @@ namespace WPF_Music.View
         }
         public void resetTextBox()
         {
-
+            // On vide les champs
             TextB_nom.Text = TextB_description.Text = TextB_annee.Text = "";
         }
 
@@ -212,11 +257,15 @@ namespace WPF_Music.View
         /// <param name="e"></param>
         private void DG_Artist_AddingNewItem(object sender, AddingNewItemEventArgs e)
         {
+            // On empeche l'utilisateur de rajouter de ligne manuellement
             MessageBox.Show("Merci de saisir les informations du nouvel artiste via le formulaire au dessus.", "Echec");
 
+            // On empeche l'ajout de ligne
             DG_Artist.ItemsSource = daoart.GetArtists();
-            DG_Artist.SelectedIndex = -1;
 
+            // On deselectionne la ligne
+            DG_Artist.SelectedIndex = -1;
+            
             ExitSelect_FN();
 
         }

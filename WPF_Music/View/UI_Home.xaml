@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="Transparent">
+        <!-- *************************************   Definition des colonnes et des rows       ********************************-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0"/>
             <ColumnDefinition/>
@@ -24,6 +25,8 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+        
+<!-- *************************************   Initialisation des éléments       ********************************-->
         <Label Name="lbl_desc1" Content="Bienvenue sur le client lourd de la maison de disque OMEGA" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Grid.Column="2" />
         <Label Name="lbl_nb_art" Grid.Row="1" Content="--" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Grid.Column="2"></Label>
         <Label Name="lbl_desc2" Grid.Row="2" Content="Grâce à notre logiciel, vous pouvez : " HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Grid.Column="2"></Label>

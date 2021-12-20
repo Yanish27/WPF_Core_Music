@@ -13,6 +13,7 @@
         </Grid.RowDefinitions>
         <Border Grid.Row="0">
             <Grid>
+        <!-- *************************************   Definition des colonnes et des rows       ********************************-->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
@@ -31,6 +32,8 @@
                     <ColumnDefinition Width="100"></ColumnDefinition>
                     <ColumnDefinition Width="50"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
+                
+<!-- *************************************   Initialisation des éléments       ********************************-->
                 <Label Name="labelNom" Grid.Row="1" Grid.Column="0" Content="Nom" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></Label>
                 <Label Name="labelAnnee" Grid.Row="3" Grid.Column="0" Content="Année" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" ></Label>
                 <Label Name="labelDescription" Grid.Row="5" Grid.Column="0" Content="Description" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"></Label>

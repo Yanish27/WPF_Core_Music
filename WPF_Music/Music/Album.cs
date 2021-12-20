@@ -12,6 +12,7 @@ namespace WPF_Music.Music
             Ratings = new HashSet<Rating>();
         }
 
+        // public int IdAlbum { get; set; }
         public int IdAlbums { get; set; }
         public string Titre { get; set; }
         public int ArtistIdArtist { get; set; }

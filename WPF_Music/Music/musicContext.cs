@@ -25,10 +25,9 @@ namespace WPF_Music.Music
         {
             if (!optionsBuilder.IsConfigured)
             {
-#pragma warning disable CS1030 // Directive #warning
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                // Informations de connexion à la BDD
+                #warning Editer en fonction de votre BDD
                 optionsBuilder.UseMySql("server=localhost;port=3306;user=root;database=music", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.21-mysql"));
-#pragma warning restore CS1030 // Directive #warning
             }
         }
 

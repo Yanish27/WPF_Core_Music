@@ -6,9 +6,8 @@
         xmlns:local="clr-namespace:WPF_Music"
         mc:Ignorable="d"
         Title="Projet EF Core - Music" Height="600" Width="800" Closing="Window_Closing_1" ResizeMode="NoResize">
-
-
     <Grid Background="Black">
+        <!-- *************************************   Definition des colonnes et des rows       ********************************-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="651*"/>
             <ColumnDefinition Width="149*"/>
@@ -18,9 +17,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
-
-        <!-- *************************************   Menu       ********************************-->
-
         <Border  Grid.Row="0" Grid.ColumnSpan="2">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -33,13 +29,13 @@
                     <ColumnDefinition Width="43*"/>
                     <ColumnDefinition Width="14*"/>
                 </Grid.ColumnDefinitions>
+                
+<!-- *************************************   Initialisation des éléments       ********************************-->
                 <Button x:Name="BTN_Home" Foreground="White" Background="LightBlue" Click="BTN_Home_Click" Grid.ColumnSpan="3" Margin="114,0,114,0">
                     <StackPanel Orientation="Vertical">
                         <Image Width="80" Height="50" Source="image/home-logo.png"></Image>
                         <Label Content="Acceuil" Foreground="White" HorizontalAlignment="Center"></Label>
                     </StackPanel>
-
-
                 </Button>
                 <Button Grid.Column="2" x:Name="BTN_page_Gestion" Foreground="White" Background="LightBlue" Click="BTN_page_Gestion_Click" Grid.ColumnSpan="2" Margin="0,0,114,0">
                     <StackPanel Orientation="Vertical">
@@ -65,17 +61,10 @@
                         <Label Content="Info" Foreground="White" HorizontalAlignment="Center"></Label>
                     </StackPanel>
                 </Button>
-
             </Grid>
         </Border>
-
-
-
-
         <!-- *************************************   Menu       ********************************-->
         <Grid Grid.Row="1" Name="Window_Container" Grid.ColumnSpan="2" Margin="0,459,0,0" Grid.RowSpan="2"></Grid>
-
-
         <!--- corps -->
         <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Frame x:Name="PartieCentrale" NavigationUIVisibility="Hidden" />
@@ -85,12 +74,8 @@
         <Grid Grid.Row="1" Name="footer" Grid.ColumnSpan="2" Margin="0,459,0,0" Grid.RowSpan="2">
             <Label Name="Footer" Content="HALAOUI Yanis - SIO2" HorizontalAlignment="Center"  VerticalAlignment="Center" Foreground="White"></Label>
         </Grid>
-
-        <!-- *************************************   End of footer     ********************************-->
-
-
+        <!-- *************************************   Fin du programme     ********************************-->
     </Grid>
-
 </Window>
 
     

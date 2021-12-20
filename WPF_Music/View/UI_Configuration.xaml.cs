@@ -21,7 +21,9 @@ namespace WPF_Music.View
     public partial class UI_Configuration : UserControl
     {
 
+        // Création d'une instance de la classe DAO_Artist
         DAO_Artist daoart;
+        // Création d'une instance de la classe DAO_Album
         DAO_Album daoalbum;
 
         int art_sel;
@@ -29,17 +31,21 @@ namespace WPF_Music.View
             public UI_Configuration()
             {
             InitializeComponent();
-
+            // Création d'un objet de type DAO_Artist
             daoart = new DAO_Artist();
+            // Création d'un objet de type DAO_Album
             daoalbum = new DAO_Album();
 
+            // On récupère la liste des artistes
             foreach (Artist artist in  daoart.GetArtists())
             {
+                // On ajoute l'artiste à la combobox
                 CB_Artist.Items.Add(artist.Name);
-
             }
+            // On récupère la liste des albums
             foreach (Album album in daoalbum.GetAlbum())
             {
+                // On ajoute l'album à la combobox
                 CB_Album.Items.Add(album.Titre);
             }
 
@@ -47,16 +53,24 @@ namespace WPF_Music.View
 
         private void btnAjoutAlbum_Click(object sender, RoutedEventArgs e)
         {
+            // Si le titre de l'album est vide
             if (TB_Album.Text != "")
             {
+                // On crée un objet de type Album
                 Album album = new Album();
+                // On récupère l'ID de l'artiste
                 album.ArtistIdArtist = art_sel;
+                // On récupère le titre de l'album
                 album.Titre = TB_Album.Text;
+                // On ajoute l'album à la BDD
                 daoalbum.AddAlbum(album);
+                // On affiche un message de confirmation
                 MessageBox.Show("L'album à bien été ajouté.");
+                // On vide le champ de texte
                 TB_Album.Text = "";
             } else
             {
+                // On affiche un message d'erreur
                 MessageBox.Show("Merci de saisir un nom d'album");
             }
 
@@ -93,7 +107,9 @@ namespace WPF_Music.View
 
         private void btnSupprAlbum_Click(object sender, RoutedEventArgs e)
         {
+            // On supprime l'album de la BDD
             var res = daoalbum.DeleteAlbum(alb_sel);
+            // On affiche un message de confirmation
             MessageBox.Show(res);
         }
     }
